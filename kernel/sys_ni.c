@@ -361,6 +361,9 @@ COND_SYSCALL(pkey_free);
 /* memfd_secret */
 COND_SYSCALL(memfd_secret);
 
+/* hello_world */
+COND_SYSCALL(hello_world);
+
 /*
  * Architecture specific weak syscall entries.
  */

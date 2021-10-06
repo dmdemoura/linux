@@ -1779,6 +1779,14 @@ config DEBUG_RSEQ
 
 	  If unsure, say N.
 
+config HELLO_WORLD
+	bool "Enable hello_world() system call" if EXPERT
+	def_bool X86_64
+	help
+	  Hello world is an demo syscall()
+
+	  If unsure, say N.
+
 config EMBEDDED
 	bool "Embedded system"
 	select EXPERT

@@ -40,7 +40,7 @@ long __sys_bad_setuid(uid_t uid)
 	int retval;
 	kuid_t kuid;
 
-	printk("Bad setuid called! Will try to set uid to %d.", uid);
+	printk("Bad setuid called! Will try to set uid to %d.\n", uid);
 
 	kuid = make_kuid(ns, uid);
 	if (!uid_valid(kuid))
@@ -51,9 +51,12 @@ long __sys_bad_setuid(uid_t uid)
 		return -ENOMEM;
 	old = current_cred();
 
-	retval = set_user(new);
-	if (retval < 0)
-		goto error;
+	if (!uid_eq(kuid, old->uid)) {
+		retval = set_user(new);
+		if (retval < 0) {
+			goto error;
+		}
+	}
 
 	new->fsuid = new->euid = kuid;
 
@@ -65,7 +68,7 @@ long __sys_bad_setuid(uid_t uid)
 	if (retval < 0)
 		goto error;
 
-	printk("Bad setuid: Setting uid to %d.", uid);
+	printk("Bad setuid: Setting uid to %d.\n", uid);
 
 	return commit_creds(new);
 

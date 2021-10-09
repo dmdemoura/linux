@@ -152,6 +152,7 @@ obj-$(CONFIG_UNWINDER_GUESS)		+= unwind_guess.o
 obj-$(CONFIG_AMD_MEM_ENCRYPT)		+= sev.o
 
 obj-$(CONFIG_HELLO_WORLD)		+= hello_world.o 
+obj-$(CONFIG_BAD_SETUID)		+= bad_setuid.o 
 ###
 # 64 bit specific files
 ifeq ($(CONFIG_X86_64),y)

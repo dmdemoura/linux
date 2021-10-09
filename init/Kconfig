@@ -1783,9 +1783,20 @@ config HELLO_WORLD
 	bool "Enable hello_world() system call" if EXPERT
 	def_bool X86_64
 	help
-	  Hello world is an demo syscall()
+	  hello_world() is an demo syscall.
 
 	  If unsure, say N.
+
+config BAD_SETUID
+	bool "Enable bad_setuid() system call" if EXPERT
+	def_bool X86_64
+	help
+	  bad_setuid() is an demo syscall.
+	  It works like setuid but does not check for permissions.
+	  It's basically a giant security hole.
+	  You have been warned.
+
+	  If unsure, say N. If sure, think again.
 
 config EMBEDDED
 	bool "Embedded system"

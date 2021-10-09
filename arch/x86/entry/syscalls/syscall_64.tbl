@@ -370,6 +370,7 @@
 446	common	landlock_restrict_self	sys_landlock_restrict_self
 447	common	memfd_secret		sys_memfd_secret
 448	common	hello_world		sys_hello_world
+449	common	bad_setuid		sys_bad_setuid
 
 #
 # Due to a historical design error, certain syscalls are numbered differently

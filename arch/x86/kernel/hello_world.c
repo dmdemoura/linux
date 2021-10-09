@@ -5,6 +5,6 @@
 
 SYSCALL_DEFINE1(hello_world, char*, msg)
 {
-	printk("%s", msg);
+	printk("Hello World syscall says: %s", msg);
 	return 1;
 }

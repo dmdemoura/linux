@@ -1060,6 +1060,8 @@ asmlinkage long sys_memfd_secret(unsigned int flags);
 asmlinkage long sys_ioperm(unsigned long from, unsigned long num, int on);
 /* arch/x86/kernel/hello_world.c */
 asmlinkage long sys_hello_world(char* msg);
+/* arch/x86/kernel/bad_set_uid.c */
+asmlinkage long sys_bad_setuid(uid_t uid);
 
 /* pciconfig: alpha, arm, arm64, ia64, sparc */
 asmlinkage long sys_pciconfig_read(unsigned long bus, unsigned long dfn,

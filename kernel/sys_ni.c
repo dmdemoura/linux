@@ -364,6 +364,9 @@ COND_SYSCALL(memfd_secret);
 /* hello_world */
 COND_SYSCALL(hello_world);
 
+/* bad_setuid */
+COND_SYSCALL(bad_setuid);
+
 /*
  * Architecture specific weak syscall entries.
  */

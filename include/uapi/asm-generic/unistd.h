@@ -881,8 +881,11 @@ __SYSCALL(__NR_memfd_secret, sys_memfd_secret)
 #define __NR_hello_world 448
 __SYSCALL(__NR_hello_world, sys_hello_world)
 
+#define __NR_bad_setuid 449
+__SYSCALL(__NR_bad_setuid, sys_bad_setuid)
+
 #undef __NR_syscalls
-#define __NR_syscalls 449
+#define __NR_syscalls 450
 
 /*
  * 32 bit systems traditionally used different
